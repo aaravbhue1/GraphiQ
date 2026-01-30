@@ -1,0 +1,504 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1600px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+}
+
+.app-header {
+    background: linear-gradient(to right, #4a6fa5, #6a93cb);
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.app-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Graph Container */
+.graph-container {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-right: 1px solid #eaeaea;
+    background-color: #f9fafc;
+}
+
+.graph-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.graph-header h2 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.graph-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+}
+
+.icon-btn:hover {
+    background-color: #3a5a8a;
+    transform: translateY(-2px);
+}
+
+.graph-wrapper {
+    flex: 1;
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+#graph {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: white;
+}
+
+.graph-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.points-info {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.points-info h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.points-container {
+    display: flex;
+    gap: 15px;
+}
+
+.points-box {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #4a6fa5;
+}
+
+.points-box h4 {
+    color: #4a6fa5;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.points-box p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Controls Container */
+.controls-container {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    overflow-y: auto;
+    max-width: 500px;
+}
+
+.controls-container h2 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.equation-input-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.equation-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.equation-input-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.equation-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.equation-input:focus {
+    border-color: #4a6fa5;
+    outline: none;
+}
+
+.clear-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.clear-btn:hover {
+    background-color: #c0392b;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-container label {
+    width: 25px;
+    font-weight: 600;
+    color: #4a6fa5;
+}
+
+.coeff-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: #ddd;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.coeff-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #4a6fa5;
+    cursor: pointer;
+}
+
+.coeff-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #4a6fa5;
+    cursor: pointer;
+    border: none;
+}
+
+.slider-value {
+    min-width: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.equation-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 12px 15px;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.action-btn:hover {
+    background-color: #3a5a8a;
+    transform: translateY(-2px);
+}
+
+.action-btn:nth-child(2) {
+    background-color: #27ae60;
+}
+
+.action-btn:nth-child(2):hover {
+    background-color: #219653;
+}
+
+.action-btn:nth-child(3) {
+    background-color: #9b59b6;
+}
+
+.action-btn:nth-child(3):hover {
+    background-color: #8e44ad;
+}
+
+.intersection-section {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.intersection-result {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.intersection-coords {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.coord-label {
+    font-weight: 600;
+    color: #4a6fa5;
+}
+
+.coord-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    background-color: #f1f8ff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    min-width: 70px;
+    display: inline-block;
+    text-align: center;
+}
+
+.intersection-type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #d5edda;
+    color: #155724;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.solution-section {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.solution-steps {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    line-height: 1.6;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.solution-steps p {
+    margin-bottom: 10px;
+}
+
+.solution-steps .step {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.solution-steps .step:last-child {
+    border-bottom: none;
+}
+
+.instructions {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.instructions h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.instructions ul {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.app-footer {
+    padding: 15px;
+    text-align: center;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .app-content {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .graph-container {
+        border-right: none;
+        border-bottom: 1px solid #eaeaea;
+        min-height: 500px;
+    }
+    
+    .controls-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        border-radius: 0;
+    }
+    
+    .points-container {
+        flex-direction: column;
+    }
+    
+    .equation-buttons {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        min-width: 100%;
+    }
+    
+    .app-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .graph-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
